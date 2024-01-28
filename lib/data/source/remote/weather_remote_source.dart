@@ -3,7 +3,7 @@ import 'package:cad_it_mobile_technical_test/data/model/forecast_hourly_model.da
 import 'package:cad_it_mobile_technical_test/data/model/weather_%20model.dart';
 
 abstract class WeatherRemoteSource {
-  Future<WeatherModel> getWeather();
+  Future<WeatherModel> getWeather(double lat, double long);
 
   Future<HourlyTemperatures> getForecastHourly();
 

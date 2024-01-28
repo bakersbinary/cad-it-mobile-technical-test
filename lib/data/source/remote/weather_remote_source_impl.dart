@@ -16,10 +16,10 @@ class WeatherRemoteSourceImpl extends WeatherRemoteSource {
   WeatherRemoteSourceImpl(this.client);
 
   @override
-  Future<WeatherModel> getWeather() async {
+  Future<WeatherModel> getWeather(double lat, double long) async {
     final response = await client.get(
       Uri.parse(
-        "https://api.openweathermap.org/data/2.5/weather?lat=-6.914744&lon=107.613144&appid=342dba97611dec522d3c8135e69e5199",
+        "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$long&appid=342dba97611dec522d3c8135e69e5199",
       ),
     );
 

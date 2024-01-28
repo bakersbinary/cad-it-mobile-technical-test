@@ -10,8 +10,8 @@ class WeatherUseCase {
 
   WeatherUseCase(this.weatherRepository);
 
-  Future<Either<Failure, WeatherEntity>> getWeather() {
-    return weatherRepository.getWeather();
+  Future<Either<Failure, WeatherEntity>> getWeather(double lat, double long) {
+    return weatherRepository.getWeather(lat, long);
   }
 
   Future<Either<Failure, List<ForecastHourlyEntity>>> getForecastHourly() {

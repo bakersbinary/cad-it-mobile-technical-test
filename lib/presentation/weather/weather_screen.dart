@@ -32,9 +32,9 @@ class WeatherScreen extends StatelessWidget {
                         const SizedBox(
                           height: 44.0,
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(left: 16.0),
-                          child: Text("Current Location: Bandung"),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16.0),
+                          child: Text("Current Location: ${state.city}"),
                         ),
                         const SizedBox(
                           height: 8.0,
@@ -187,11 +187,18 @@ class WeatherScreen extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        "Hum: ${item.humidity}% | Max: ${item.tempMax}°C | Min: ${item.tempMin}°C",
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                        ),
+                                      Row(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          Image.asset("assets/ic_humidity.png", width: 12.0, height: 12.0,),
+                                          const SizedBox(width: 4.0,),
+                                          Text(
+                                            "${item.humidity}% - Max: ${item.tempMax}°C | Min: ${item.tempMin}°C",
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
                                       )
                                     ],
                                   ),

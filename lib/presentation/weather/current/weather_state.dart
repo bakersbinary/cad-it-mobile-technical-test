@@ -9,8 +9,9 @@ class WeatherLoading extends WeatherState {}
 
 class WeatherSuccess extends WeatherState {
   final WeatherEntity weatherEntity;
+  final String city;
 
-  WeatherSuccess(this.weatherEntity);
+  WeatherSuccess(this.weatherEntity, this.city);
 }
 
 class WeatherFailed extends WeatherState {
