@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:cad_it_mobile_technical_test/domain/entity/weather_entity.dart';
 
-WeatherModel welcomeFromJson(String str) =>
+WeatherModel weatherModelFromJson(String str) =>
     WeatherModel.fromJson(json.decode(str));
 
 String welcomeToJson(WeatherModel data) => json.encode(data.toJson());
